@@ -1,0 +1,70 @@
+ 
+<div class=" container  d-flex p-4 bg-secondary  " id="form-first">
+
+    <div class=" col-lg-4" id="img-contain" >
+        <img  [src]="imageUrl" alt="">
+    </div>
+    <div class=" col-lg-8 border border-2 bg-white mx-0" id="seconde-part-contain" *ngIf="afficherBloc1">
+        <div id="logo-content">
+            <i class="bi bi-x-diamond"></i><span>Logo</span>
+        </div>
+        <div>
+            <p id="description">Sign into your account</p>
+        </div>
+        <form action=""  > 
+            <div class="mb-3" >
+              <label for="exampleFormControlInput1" class="form-label">Email address</label>
+              <input type="email" class="form-control" name="monChamp1" id="exampleFormControlInput1" [placeholder]="contenu" [(ngModel)]="email">
+            </div>
+            
+            <div class="mb-3">
+              <label for="passwordExemple" class="form-label">Password</label>
+              <input type="password" class="form-control" name="monChamp2" id="passwordExemple"  [(ngModel)]="pass">
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-dark mb-3" id="btn-login" (click)="verifierLogin();">Login</button>
+
+
+                <p>Forgot password ?</p>
+                <button id="btn-btn" (click)="basculerBlocs(); ">Don't have an account ? Register here</button>
+            </div>
+          </form>
+    </div>
+   
+</div>
+
+
+
+
+<div class="" id="form-seconde" *ngIf="!afficherBloc1">
+    <h2 class="text-center" id="inscription">Inscription</h2>
+    
+    <form action=""> 
+        <div class="mb-3">
+          <label for="nameInput1" class="form-label">Nom</label>
+          <input type="text" class="form-control"  name="monChamp3" id="nameInput1" placeholder="votre nom de famille" [(ngModel)]="nom">
+        </div>
+        <div class="mb-3">
+            <label for="nameInput2" class="form-label">Prenom</label>
+            <input type="tel" class="form-control"name="monChamp4" id="nameInput2" placeholder="votre prenom" [(ngModel)]="prenom">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="monChamp5" id="exampleFormControlInput1" [placeholder]="contenu" [(ngModel)]="email">
+          </div>
+        
+        <div class="mb-3">
+          <label for="passwordExemple" class="form-label">password</label>
+          <input type="password" class="form-control" name="monChamp6" id="passwordExemple" [(ngModel)]="pass">
+        </div>
+        <div class="mb-3">
+          <label for="passwordExemple" class="form-label">password confirm</label>
+          <input type="password" class="form-control" name="monChamp7" id="passwordExemple" [(ngModel)]="pass" >
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-dark mb-3" id="btn-login" (click)="verifierRegister()">Register</button>
+            <p>Forgot password ?</p>
+        </div>
+      </form>
+    </div>
+  
